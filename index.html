@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>My Lawn Care Business</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,7 +11,7 @@
             padding: 0;
         }
         header {
-            background-color: #000000;
+            background-color: #000000; /* Black */
             color: white;
             padding: 15px 0;
             text-align: center;
@@ -23,10 +23,16 @@
         nav a {
             margin: 0 15px;
             text-decoration: none;
-            color: #333;
+            color: #FF6347; /* Tomato color */
+        }
+        nav a:hover {
+            color: #FF4500; /* Darker orange for hover effect */
         }
         main {
             padding: 20px;
+        }
+        section {
+            margin-bottom: 40px;
         }
         footer {
             background-color: #333;
@@ -42,7 +48,7 @@
 <body>
 
 <header>
-    <h1>Welcome to My Website</h1>
+    <h1>Welcome to My Lawn Care Business</h1>
 </header>
 
 <nav>
@@ -52,13 +58,45 @@
 </nav>
 
 <main>
-    <h2>Home</h2>
-    <p>My name is Samuel Parks. You can hire me for any type of yard work, lawn care, or any type of chores you need. I would love to help out with your chores at an affordable price.</p>
+    <section id="home">
+        <h2>Home</h2>
+        <p>This is the home page of my website. Here you can find various information about different topics.</p>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Welcome to My Lawn Care Business! I am dedicated to providing top-notch lawn care services to keep your lawn green and healthy. With years of experience, I am passionate about creating beautiful and sustainable outdoor spaces for my clients.</p>
+        
+        <h3>Our Services</h3>
+        <ul>
+            <li>Lawn Mowing</li>
+            <li>Edging and Trimming</li>
+            <li>Fertilization and Weed Control</li>
+            <li>Landscape Design</li>
+            <li>Leaf Removal</li>
+            <li>Seasonal Cleanups</li>
+        </ul>
+
+        <h3>About Me</h3>
+        <div class="team-member">
+            <strong>John Doe</strong> - Founder & Owner
+            <p>Hi, I'm John, the founder and owner of My Lawn Care Business. I have over 20 years of experience in the lawn care industry and am committed to providing the best service possible.</p>
+        </div>
+
+        <h3>Our Mission</h3>
+        <p>My mission is to provide exceptional lawn care services that enhance the beauty and value of your property. I strive to exceed my clients' expectations with every project, ensuring satisfaction and a lush, healthy lawn.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Contact information will go here.</p>
+    </section>
 </main>
 
 <footer>
-    <p>&copy; 2024 My Website</p>
+    <p>&copy; 2024 My Lawn Care Business</p>
 </footer>
 
 </body>
 </html>
+
