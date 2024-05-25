@@ -7,37 +7,50 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
+            margin: 0;
+            padding: 0;
         }
-        .button {
-            display: inline-block;
-            margin: 10px;
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar a {
+            display: block;
             padding: 15px 25px;
             font-size: 20px;
             color: white;
-            background-color: #007BFF;
-            border: none;
-            border-radius: 5px;
+            text-align: center;
             text-decoration: none;
-            cursor: pointer;
         }
-        .button:hover {
-            background-color: #0056b3;
+        .navbar a:hover {
+            background-color: #575757;
+        }
+        .content {
+            margin-top: 70px;
+            text-align: center;
+            padding: 20px;
         }
     </style>
 </head>
 <body>
 
-    <h1>Home Page</h1>
-    
-    <a href="index.html" class="button">Home</a>
-    <a href="about.html" class="button">About</a>
-    <a href="contact.html" class="button">Contact</a>
-    <a href="reviews.html" class="button">Reviews</a>
-    <a href="other.html" class="button">Other</a>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="other.html">Other</a>
+    </div>
 
-    <p>Welcome to the Home page!</p>
+    <div class="content">
+        <h1>Home Page</h1>
+        <p>Welcome to the Home page!</p>
+    </div>
 
 </body>
 </html>
