@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>Home</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,28 +12,28 @@
         }
         .navbar {
             display: flex;
-            justify-content: center;
+            flex-direction: column; /* Stack buttons vertically */
+            align-items: center; /* Center align the buttons */
             background-color: #333;
-            position: -webkit-sticky;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            overflow-x: auto;
         }
         .navbar a {
-            display: block;
-            padding: 15px 20px;
-            font-size: 18px;
+            width: 100%; /* Make each button take the full width of the navbar */
+            padding: 15px 20px; /* Increased padding for better touch target */
+            font-size: 18px; /* Adjusted font size for smaller screens */
             color: white;
             text-align: center;
             text-decoration: none;
+            border-bottom: 1px solid #444; /* Add a border to separate the buttons */
         }
         .navbar a:hover {
             background-color: #575757;
         }
         .content {
-            margin-top: 70px;
+            margin-top: 300px; /* Adjust this value to fit the height of the navbar */
             text-align: center;
             padding: 20px;
         }
@@ -56,3 +56,4 @@
 
 </body>
 </html>
+
