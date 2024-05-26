@@ -12,8 +12,8 @@
         }
         .navbar {
             display: flex;
-            flex-direction: column; /* Stack buttons vertically */
-            align-items: center; /* Center align the buttons */
+            flex-direction: column;
+            align-items: center;
             background-color: #333;
             position: fixed;
             width: 100%;
@@ -21,32 +21,52 @@
             z-index: 1000;
         }
         .navbar a {
-            width: 100%; /* Make each button take the full width of the navbar */
-            padding: 15px 20px; /* Increased padding for better touch target */
-            font-size: 18px; /* Adjusted font size for smaller screens */
+            width: 100%;
+            padding: 10px 15px;
+            font-size: 16px;
             color: white;
             text-align: center;
             text-decoration: none;
-            border-bottom: 1px solid #444; /* Add a border to separate the buttons */
+            border-bottom: 1px solid #444;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
         .navbar a:hover {
             background-color: #575757;
+            transform: scale(1.05);
+        }
+        .navbar a:active {
+            transform: scale(0.95);
+            transition: transform 0.1s ease;
         }
         .content {
-            margin-top: 300px; /* Adjust this value to fit the height of the navbar */
+            margin-top: 220px;
             text-align: center;
             padding: 20px;
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        .navbar a {
+            animation: slideIn 0.5s ease-out forwards;
+            animation-delay: calc(0.1s * var(--order));
         }
     </style>
 </head>
 <body>
 
     <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="reviews.html">Reviews</a>
-        <a href="services.html">Services</a>
+        <a href="index.html" style="--order: 1;">Home</a>
+        <a href="about.html" style="--order: 2;">About</a>
+        <a href="contact.html" style="--order: 3;">Contact</a>
+        <a href="reviews.html" style="--order: 4;">Reviews</a>
+        <a href="services.html" style="--order: 5;">Services</a>
     </div>
 
     <div class="content">
@@ -56,3 +76,4 @@
 
 </body>
 </html>
+
