@@ -40,8 +40,19 @@
         }
         .content {
             margin-top: 220px;
-            text-align: center;
             padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .work-info {
+            flex: 2;
+            margin-right: 20px;
+        }
+        .prices {
+            flex: 1;
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
         }
         @keyframes slideIn {
             from {
@@ -70,12 +81,22 @@
     </div>
 
     <div class="content">
-        <h1>Welcome to My Website</h1>
-        <p>This is the home page of my website. Yard work and Lawn care is my specialty. You may hire me anytime as long as it fits in my schedule, all you have to do is call/text the numbers provided in the about page. Or email my inbox where I will respond quickly. I would love to help out with your chores at an affordable price. 
-        10$ hour for weeding, mulching, leave removal, etc.
-        20$ hour for mowing (restrictions apply)
-        Willing to negotiate on price.
-        All prices can be pro-rated according to the scope of the job. </p>
+        <div class="work-info">
+            <h1>Welcome to My Website</h1>
+            <p>This is the home page.</p>
+            <h2>About My Work</h2>
+            <p>Provide detailed information about your work here. You can describe the services you offer, your experience, and any other relevant information that would help potential clients understand what you do and why they should choose you.</p>
+        </div>
+        <div class="prices">
+            <h2>Pricing</h2>
+            <ul>
+                <li>Service 1: $100</li>
+                <li>Service 2: $200</li>
+                <li>Service 3: $300</li>
+                <li>Service 4: $400</li>
+                <li>Service 5: $500</li>
+            </ul>
+        </div>
     </div>
 
 </body>
