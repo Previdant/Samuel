@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reviews</title>
+    <title>Services</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -43,36 +43,19 @@
             text-align: center;
             padding: 20px;
         }
-        .input-form {
-            margin: 20px 0;
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
-        .input-form input, .input-form textarea {
-            display: block;
-            width: 80%;
-            margin: 10px auto;
-            padding: 10px;
-            font-size: 16px;
-        }
-        .input-form button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #333;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        .input-form button:hover {
-            background-color: #575757;
-        }
-        .reviews-list {
-            list-style-type: none;
-            padding: 0;
-        }
-        .reviews-list li {
-            background-color: #f4f4f4;
-            margin: 10px 0;
-            padding: 10px;
-            border-radius: 5px;
+        .navbar a {
+            animation: slideIn 0.5s ease-out forwards;
+            animation-delay: calc(0.1s * var(--order));
         }
     </style>
 </head>
@@ -87,67 +70,9 @@
     </div>
 
     <div class="content">
-        <h1>Reviews Page</h1>
-        <p>Please leave your review below:</p>
-        <div class="input-form">
-            <input type="text" id="reviewer-name" placeholder="Your Name">
-            <textarea id="review-message" placeholder="Your Review"></textarea>
-            <button onclick="submitReview()">Submit</button>
-        </div>
-
-        <h2>Reviews</h2>
-        <ul class="reviews-list" id="reviews-list">
-            <!-- User reviews will be appended here -->
-        </ul>
+        <h1>Our Reviews</h1>
+        <p>This is the REviews page.</p>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            fetchReviews();
-        });
-
-        function fetchReviews() {
-            fetch('http://localhost:3000/reviews')
-                .then(response => response.json())
-                .then(reviews => {
-                    const reviewsList = document.getElementById('reviews-list');
-                    reviewsList.innerHTML = '';
-                    reviews.forEach(review => {
-                        const newReview = document.createElement('li');
-                        newReview.textContent = review.name + ': ' + review.message;
-                        reviewsList.appendChild(newReview);
-                    });
-                });
-        }
-
-        function submitReview() {
-            const name = document.getElementById('reviewer-name').value;
-            const message = document.getElementById('review-message').value;
-
-            if (name && message) {
-                fetch('http://localhost:3000/reviews', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ name, message }),
-                })
-                .then(response => response.json())
-                .then(review => {
-                    const reviewsList = document.getElementById('reviews-list');
-                    const newReview = document.createElement('li');
-                    newReview.textContent = review.name + ': ' + review.message;
-                    reviewsList.appendChild(newReview);
-
-                    // Clear the input fields
-                    document.getElementById('reviewer-name').value = '';
-                    document.getElementById('review-message').value = '';
-                });
-            } else {
-                alert('Please enter both your name and review.');
-            }
-        }
-    </script>
 
 </body>
 </html>
