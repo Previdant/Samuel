@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reviews</title>
+    <title>Services</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -71,45 +71,8 @@
 
     <div class="content">
         <h1>Our Reviews</h1>
-        <p>This is the Reviews page.</p>
-
-        <!-- Review Submission Form -->
-        <h2>Submit a Review</h2>
-        <form id="reviewForm">
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" required><br><br>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
-            <label for="review">Review:</label><br>
-            <textarea id="review" name="review" required></textarea><br><br>
-            <button type="submit">Submit</button>
-        </form>
-        <div id="statusMessage"></div>
+        <p>This is the REviews page.</p>
     </div>
-
-    <script>
-        document.getElementById('reviewForm').addEventListener('submit', async function(event) {
-            event.preventDefault();
-
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const review = document.getElementById('review').value;
-
-            const response = await fetch(https://script.google.com/macros/s/AKfycbyOE1rIYAMjU5WgdhLCUbttCj79fI4T4FrzI_IonQtX1AweLXwNkTiq9D_GZeSdY6s_/exec, { // Replace with your Google Apps Script URL
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ name, email, review })
-            });
-
-            const result = await response.json();
-            document.getElementById('statusMessage').innerText = result.message;
-            if (response.ok) {
-                document.getElementById('reviewForm').reset();
-            }
-        });
-    </script>
 
 </body>
 </html>
